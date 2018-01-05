@@ -1,25 +1,32 @@
-<h2>Amigos</h2>
-<div class="row 2">
-  <% @user.friendships.each_with_index do |friendship,index| %>
-    <div class="col s4 m4 l4">
-      <div class="card small gradient-45deg-light-blue-cyan gradient-shadow white-text">
-        <div class="card-content">
-          <p class=""><%= friendship.friend.email %></p>
-            <% if @user.inverse_friends.ids== friendship.friend_id  %>
-                <i class="fa fa-ban"></i> te tiene en su lista de amigos
-            <% else %>
-                <span style="text-decoration: line-through;"> no te tiene en su lista</span>
-            <% end %>
-        </div>
-        <div class="card-action">
-          <%= link_to "destruir amistad", friendship, :method => :delete , class: "waves-effect waves-light btn gradient-45deg-red-pink"%>
+
+
+<div class="card-stats">
+<div class="row mt-1">
+    <% for user in @users %>
+    <% if (Friendship.where(user_id: current_user.id, friend_id: user.id).count==0)&& (user.id!=current_user.id) %>
+
+    <div class="col s12 m6 l3">
+        <div class="card small gradient-45deg-light-blue-cyan gradient-shadow white-text">
+          <div class="card-content">
+            <p class=""> <%= user.name  %> <%= user.last_name %>
+              <br><%= user.email %>
+              <span class="divider"></span>
+               Registrado: <%= user.created_at.strftime("%d/%m/%Y") %>
+              <hr>
+               Ultima vez: <%= user.last_sign_in_at.strftime("%d/%m/%Y a las %I:%M%p" )%>
+            </p>
+          </div>
+            <div class="card-action">
+              <%= link_to "Agregar", friendships_path(:friend_id => user), :method => :post , class: "waves-effects waves-light btn"%>
+            </div>
         </div>
       </div>
-    </div>
-  <% end %>
-</div>
-<p>
+      <%end %>
 
-  <%# for user in @user.inverse_friends %>
-    <%#= user.email %>
-  <%# end %>
+    <% end %>
+</div>
+</div>
+
+
+    </div>
+  </div>

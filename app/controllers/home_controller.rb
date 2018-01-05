@@ -6,8 +6,10 @@ class HomeController < ApplicationController
   end
 
   def comunidad
-    @user = User.find(current_user.id)
+    @users = User.all
   end
+
+
   def perfil
     @user = User.find(current_user.id)
     @posts = Post.find_by_sql("select posts.* from posts where posts.user_id=#{current_user.id} order by created_at DESC ")

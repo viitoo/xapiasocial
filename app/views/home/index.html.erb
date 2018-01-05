@@ -29,8 +29,9 @@
             </div>
             <div class="card-action">
                 <% if current_user.id==p.user.id %>
-                  <%= link_to 'Edit', edit_post_path(p) %>
+                  <%= link_to 'Editar', edit_post_path(p), class:"waves-effect waves-light btn" %>
                 <%end %>
+                <%= link_to  "ir al post", post_path(p), class:"waves-effect waves-light btn" %>
             </div>
           </div>
       </div>
@@ -38,5 +39,8 @@
           </div>
         <% end %>
 
+
+
     <% end %>
 
+</div>

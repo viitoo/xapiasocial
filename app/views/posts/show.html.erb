@@ -1,23 +1,25 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Attachment:</strong>
-  <%= @post.attachment %>
-</p>
+<div class="row">
+    <div class="col s12">
+        <div class="card-panel">
+            <%= image_tag(@post.attachment_url(:normal)) if @post.attachment? %>
+          <p class="flow-text">
+            <%= @post.content %>
+          </p>
+          <p>
+          <% if @post.public %>
+            Post publico
+          <% else %>
+            Post privado
+          <% end %>
+        </p>
+        </div>
+      </div>
 
-<p>
-  <strong>Content:</strong>
-  <%= @post.content %>
-</p>
+</div>
+<% if current_user.id==@post.user.id %>
+  <%= link_to 'Editar', edit_post_path(@post) %> |
+<%end %>
 
-<p>
-  <strong>User:</strong>
-  <%= @post.user.email %>
-</p>
-<p>
-    <strong>publico:</strong>
-    <%= @post.public %>
-  </p>
-
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+<%= link_to 'Volver', home_index_path %>

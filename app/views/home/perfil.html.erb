@@ -42,10 +42,10 @@
       <div class="card small gradient-45deg-light-blue-cyan gradient-shadow white-text">
         <div class="card-content">
           <p class=""><%= friendship.friend.email %></p>
-            <% if @user.inverse_friends.ids== friendship.friend_id  %>
-                <i class="fa fa-ban"></i> te tiene en su lista de amigos
+            <% if @user.inverse_friends.ids.include? friendship.friend_id  %>
+              te tiene en su lista de amigos
             <% else %>
-                <span style="text-decoration: line-through;"> no te tiene en su lista</span>
+            <i class="fa fa-ban">  </i><span style="text-decoration: line-through;"> no te tiene en su lista</span>
             <% end %>
         </div>
         <div class="card-action">
@@ -55,4 +55,3 @@
     </div>
   <% end %>
 </div>
-<p>
