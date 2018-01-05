@@ -24,10 +24,11 @@
     <li class="no-padding">
       <ul class="collapsible" data-collapsible="accordion">
         <li class="bold">
-          <a href="index.html" class="waves-effect waves-cyan">
+           <%= link_to  root_path , class: "waves-effect waves-cyan" do  %>
               <i class="fa fa-tachometer" aria-hidden="true"></i>
               <span class="nav-text">Dashboard</span>
-            </a>
+
+            <%end %>
         </li>
         <li class="bold">
           <%#= link_to empresas_path, class: "waves-effect waves-blue" do %>

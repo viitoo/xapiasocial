@@ -10,10 +10,10 @@
         <ul class="left">
           <li>
             <h1 class="logo-wrapper">
-              <a href="index.html" class="brand-logo darken-1">
+              <%= link_to root_path, class: "brand-logo darken-1" do %>
                 <%=  image_tag "logo/materialize-logo.png", alt: "materialize logo" %>
                 <span class="logo-text hide-on-med-and-down">Xappify  <sub><font size= "2">0.1.0</font></sub></span>
-              </a>
+              <% end %>
             </h1>
           </li>
         </ul>

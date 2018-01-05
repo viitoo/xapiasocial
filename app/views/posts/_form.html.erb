@@ -1,0 +1,27 @@
+<%= simple_form_for @post  do |form| %>
+<%= form.hidden_field :user_id%>
+
+<div class="row">
+  <div class="col s12 m12 l12">
+    <div class="materialize-textarea">
+      <%= form.input :content , as: :text,required: true , label: false, placeholder: "Cuentanos algo bonito este dia !!!",input_html: { class: 'materialize-textarea' }%>
+    </div>
+  </div>
+  </div>
+  <div class="row">
+  <div class="col s3 m3 l3">
+      <%= form.input :public, as: :boolean, checked_value: true, unchecked_value: false, input_html: { class: 'filled-in'}, label: false %>
+      <label for="post[public]">publico?</label>
+  </div>
+</div>
+
+<div class="card-action">
+  <div row>
+    <div class="right col s2 m2 l2">
+      <div class="actions">
+      <%= form.submit  class:"btn waves-effect waves-light left"%>
+    </div>
+    </div>
+  </div>
+</div>
+<% end %>

@@ -12,15 +12,13 @@
 //
 
 //= require rails-ujs
-//= require turbolinks
 
 //= require jquery
-//= require jquery-ui/core
-//= require jquery-ui/position
 //= require materialize
 //= require prism
 //= require plugins
 //= require_tree ./materialize-plugin/
+
 //= require_tree .
 
 
