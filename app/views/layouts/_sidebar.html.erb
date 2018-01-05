@@ -3,20 +3,18 @@
     <li class="user-details cyan darken-2">
       <div class="row">
         <div class="col col s4 m4 l4">
-            <%= image_tag "avatar/avatar-7.png", class: "circle responsive-img valign profile-image cyan"%>
+            <%= image_tag(current_user.profile_url, class: "circle responsive-img valign profile-image cyan") if current_user.profile? %>
+
+
         </div>
         <div class="col col s8 m8 l8">
           <ul id="profile-dropdown-nav" class="dropdown-content">
-            <li>
-              <a href="#" class="grey-text text-darken-1">
-                <i class="material-icons">face</i> Profile</a>
-            </li>
-            <li>
-              <a href="#" class="grey-text text-darken-1">
-                <i class="material-icons">settings</i> Settings</a>
+             <li>
+                <%= link_to "perfil", home_perfil_path %>
             </li>
           </ul>
-          <a class="btn-flat dropdown-button waves-effect waves-light white-text profile-btn" href="#" data-activates="profile-dropdown-nav">Alan Brito<i class="mdi-navigation-arrow-drop-down right"></i></a>
+          <a class="btn-flat dropdown-button waves-effect waves-light white-text profile-btn" href="#" data-activates="profile-dropdown-nav"><%= current_user.name%> <%= current_user.last_name%>
+            <i class="mdi-navigation-arrow-drop-down right"></i></a>
           <p class="user-roal">Operador</p>
         </div>
       </div>
