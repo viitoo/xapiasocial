@@ -1,0 +1,31 @@
+<div class="container">
+
+
+</div>
+<div class="container">
+
+<div class="row">
+    <div class="col s10 m10 l0">
+        <div class="card-panel">
+                <h4 class="header2">Acceso a Xappify</h4>
+                    <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+                      <%= f.input :email, required: false, autofocus: true %>
+                      <%= f.input :password, required: false %>
+                      <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+                      <%= f.button :submit, "Log in" %>
+                    <% end %>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col s10 m10 l0">
+      <p><%= render "devise/shared/links" %>  </p>
+
+
+  </div>
+</div>
+
+
+
+

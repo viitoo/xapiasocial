@@ -10,8 +10,11 @@
   </div>
   <div class="row">
   <div class="col s3 m3 l3">
-      <%= form.input :public, as: :boolean, checked_value: true, unchecked_value: false, input_html: { class: 'filled-in'}, label: false %>
-      <label for="post[public]">publico?</label>
+      <%= form.input :public, as: :boolean, checked_value: true, unchecked_value: false, input_html: { class: 'filled-in'}, label: " publico?"%>
+      <%= image_tag(@post.attachment_url) if @post.attachment? %>
+
+      <%= form.input :attachment, label: false  %>
+
   </div>
 </div>
 
