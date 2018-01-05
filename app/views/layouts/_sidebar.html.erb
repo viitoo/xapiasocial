@@ -31,19 +31,17 @@
             <%end %>
         </li>
         <li class="bold">
-          <%#= link_to empresas_path, class: "waves-effect waves-blue" do %>
-          <a href="index.html" class="waves-effect waves-cyan">
+          <%= link_to posts_path, class: "waves-effect waves-cyan" do %>
+            <i class="fa fa-home" aria-hidden="true"></i>
+            <span class="nav-text">Posts</span>
+          <% end %>
 
-          <i class="fa fa-home" aria-hidden="true"></i>
-          <span class="nav-text">Home</span>
-            </a>
-          <%# end %>
         </li>
         <li class="bold">
-          <a href="ui-basic-buttons.html" class="waves-effect waves-cyan">
-          <i class="fa fa-at" aria-hidden="true"></i>
-              <span class="nav-text">Descubrir</span>
-            </a>
+          <%= link_to home_comunidad_path, class:"waves-effect waves-cyan" do  %>
+              <i class="fa fa-at" aria-hidden="true"></i>
+              <span class="nav-text">Comunidad</span>
+          <%end%>
         </li>
       </ul>
     </li>

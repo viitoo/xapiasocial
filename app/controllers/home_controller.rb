@@ -4,9 +4,9 @@ class HomeController < ApplicationController
     @post = Post.new
     @diarios = Post.find_by_sql("select * from posts order by created_at DESC ")
   end
-  def comunidad
-    @users= User.all
 
+  def comunidad
+    @users = User.where.not(id: current_user.id)
   end
 
 end
