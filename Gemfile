@@ -21,7 +21,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'devise', github: 'plataformatec/devise'
 gem 'erubis'
 gem 'simple_form'
-gem 'carrierwave', '~> 1.0'
+gem 'carrierwave', '~> 1.3'
 gem "mini_magick"
 gem 'friendly_id', '~> 5.1.0' # Note: You MUST use 5.0.0 or greater for Rails 4.0+
 
